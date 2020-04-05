@@ -55,4 +55,4 @@ Imágenes del funcionamiento del juego
 
 # Créditos
 
-Desarrollado por Miguel Rodriguez (miiguell005)
+Miguel Rodriguez (miiguell005)
