@@ -53,6 +53,10 @@ Imágenes del funcionamiento del juego
 
 <img src="http://glifosato.sisredcolombia.com/wp-content/uploads/2020/04/SudokuPerder.png" min-width="200px" min-height="200px">
 
+# Video Funcional
+
+<iframe width="875" height="421" src="https://www.youtube.com/embed/86BgDjU7YdM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 # Créditos
 
 Miguel Rodriguez (miiguell005)
