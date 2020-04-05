@@ -52,3 +52,7 @@ Imágenes del funcionamiento del juego
 * Has perdido
 
 <img src="http://glifosato.sisredcolombia.com/wp-content/uploads/2020/04/SudokuPerder.png" min-width="200px" min-height="200px">
+
+# Créditos
+
+Desarrollado por Miguel Rodriguez (miiguell005)
