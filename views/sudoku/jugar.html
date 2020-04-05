@@ -1,0 +1,90 @@
+<!--/*
+ * Desarrollado por Miguel Alejandro Rodriguez
+ * miiguell005@gmail.com
+ */-->
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;&nbsp;
+        <a class="btn btn-primary" href="#!/sudoku">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> Atrás
+        </a>
+    </div>
+    <div class="text-center" style="font-size: 36px;">
+        Sudoku
+    </div>
+    <div style="font-size: 28px;">
+        <div class="col-xs-6 text-right">
+            {{juego.cronometro.detalle}}
+        </div>
+        <div class="col-xs-6 text-left">
+            <i ng-class="{'fa fa-heart': juego.vidas >= 1, 'fa fa-heart-o': juego.vidas < 1 }" style="color: #ff5252;"></i>
+            <i ng-class="{'fa fa-heart': juego.vidas >= 2, 'fa fa-heart-o': juego.vidas < 2 }" style="color: #ff5252;"></i>
+            <i ng-class="{'fa fa-heart': juego.vidas >= 3, 'fa fa-heart-o': juego.vidas < 3 }" style="color: #ff5252;"></i>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3">
+                <!--==================Muestra la cantidad de números que hace falta=============--
+                <span>
+                  <span ng-show="juego.botonSeleccionado && juego.cuentaNumerosColocados[juego.botonSeleccionado] != 9 && juego.botonSeleccionado != 'borrar'">
+                    Faltan {{9 - juego.cuentaNumerosColocados[juego.botonSeleccionado]}}
+                  </span><br />
+                </span>
+                <!--================Fin Muestra la cantidad de números que hace falta===========-->
+                <!--===================Tablero de sudoku=========================-->
+                <center>
+                    <table class="">
+                        <tbody style="border-top: 2px solid #000000;">
+
+                            <tr ng-repeat="t in juego.tablero"
+                                style="border-left: 2px solid #000000; height:37px;"
+                                ng-style="t.index % 3 == 0 && { 'border-bottom': '2px solid #000000'}">
+
+                                <td class="text-center" ng-repeat="f in t.fila track by $index"
+                                    ng-click="juego.asignarNumeroJugador(t.index , f.index);"
+                                    style="width:37px; border: #a5a5a5 1px solid;"
+                                    ng-style="{ 'border-right': (f.index % 3 == 0 ? '2px solid #000000' : null),
+                  'background-color': (f.sinEdicion && f.columna != juego.botonSeleccionado ? '#EAEDED' : (f.columna == juego.botonSeleccionado && f.mostrar ? '#2E64FE' : 'white'))}">
+
+                                    <span ng-show="f.mostrar"
+                                          ng-style="{'font-weight': (f.sinEdicion ? '900' : '300'), 'color' : (f.columna == juego.botonSeleccionado ? 'white' : 'black') }">
+                                        {{f.columna}}
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </center>
+                <!--=================Fin Tablero de sudoku=======================-->
+            </div>
+        </div>
+    </div>
+    <!--=======================Botones de los números===================-->
+    <div class="col-md-12 text-center">
+        <br />
+        <div ng-repeat="b in juego.botones">
+            <button ng-repeat="row in b.row1" ng-click="juego.seleccionarBotonMenu(row.valor)"
+                    style="width:40px; height:40px;"
+                    ng-style="{'background-color': (row.valor == juego.botonSeleccionado ? '#2E64FE' : (juego.cuentaNumerosColocados[row.valor] == 9 ? '#BDC3C7' : '')),
+                        'color': row.valor == juego.botonSeleccionado ? 'white' : '',
+                        'border-color':  row.valor == juego.botonSeleccionado ? 'cadetblue' : ''}">
+                {{row.valor}}
+            </button>
+        </div>
+    </div>
+    <div class="col-md-12 text-center">
+        <div ng-repeat="b in juego.botones">
+            <button ng-repeat="row in b.row2" ng-click="juego.seleccionarBotonMenu(row.valor)"
+                    style="width:40px; height:40px; "
+                    ng-style="{'background-color': (row.valor == juego.botonSeleccionado ? '#2E64FE' : (juego.cuentaNumerosColocados[row.valor] == 9 ? '#BDC3C7' : '')),
+                        'color': row.valor == juego.botonSeleccionado ? 'white' : '',
+                        'border-color':  row.valor == juego.botonSeleccionado ? 'cadetblue' : ''}">
+                {{row.valor}}
+            </button>
+        </div>
+    </div>
+    <!--=====================Fin Botones de los números=================-->
+</div>
