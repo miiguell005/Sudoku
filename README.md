@@ -55,7 +55,7 @@ Imágenes del funcionamiento del juego
 
 # Video Funcional
 
-<iframe width="875" height="421" src="https://www.youtube.com/embed/86BgDjU7YdM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/watch?v=86BgDjU7YdM
 
 # Créditos
 
